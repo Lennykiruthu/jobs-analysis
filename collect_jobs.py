@@ -38,7 +38,7 @@ for loc in locations:
         params  = {
             'app_id'           : APP_ID,
             'app_key'          : APP_KEY,
-            'what'             : 'data analyst',
+            'what'             : 'data science',
             'where'            : loc['location'],
             'results_per_page' : 50
             }
@@ -59,7 +59,7 @@ inserted_count = 0
 skipped_count = 0
 
 # Connect to SQLite database (or create it if it doesn't exist)
-conn   = sqlite3.connect('adzuna_jobs_3.db')
+conn   = sqlite3.connect('adzuna_jobs.db')
 cursor = conn.cursor()
 
 # Create the jobs table if it doesn't already exist

@@ -38,7 +38,7 @@ for loc in locations:
         params  = {
             'app_id'           : APP_ID,
             'app_key'          : APP_KEY,
-            'what'             : 'data science',
+            'what'             : 'machine learning',
             'where'            : loc['location'],
             'results_per_page' : 50
             }

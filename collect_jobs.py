@@ -6,6 +6,13 @@ import time          # To introduce delay between API requests (avoid rate-limit
 from dotenv import load_dotenv
 import os
 
+# Keep prompting until a non-empty job keyword is entered
+while True:
+    search_query = input("Enter a job keyword (e.g. 'data analyst', 'machine learning'): ").strip()
+    if search_query:
+        break
+    print('Job keyword cannot be empty. Please try again')
+
 # Load variables from .env into the local environment
 load_dotenv() 
  
@@ -28,7 +35,7 @@ all_jobs      = []
 print('Fetching jobs from Adzuna API.')
 
 for loc in locations:
-    print(f'\nFetching jobs for location: {loc}.')
+    print(f'\nFetching {search_query} jobs for location: {loc['country']}, {loc['location']}.')
     for page in range (1, pages + 1):
         print(f'\nFetching jobs on page: {page}.')
         # Construct the API endpoint URL dynamically based on the country and page
@@ -38,7 +45,7 @@ for loc in locations:
         params  = {
             'app_id'           : APP_ID,
             'app_key'          : APP_KEY,
-            'what'             : 'machine learning',
+            'what'             : search_query,
             'where'            : loc['location'],
             'results_per_page' : 50
             }

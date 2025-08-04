@@ -2,9 +2,7 @@ streamlit
 pandas
 numpy
 requests
-sqlite3
 seaborn
 matplotlib
 plotly
-ast
 regex

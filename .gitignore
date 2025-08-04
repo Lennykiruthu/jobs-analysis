@@ -1,3 +1,2 @@
 *.env
-*.db
 api_test.py
